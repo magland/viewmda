@@ -2,7 +2,7 @@
 
 TEMPLATE =	app
 
-QT += core gui
+QT += core gui widgets
 
 OBJECTS_DIR = ./build
 MOC_DIR = ./build
@@ -24,6 +24,10 @@ HEADERS += mda.h array2d.h array3d.h array4d.h
 SOURCES += mda.cpp array2d.cpp array3d.cpp array4d.cpp 
 HEADERS += jniftiimage2.h
 SOURCES += jniftiimage2.cpp
+
+HEADERS += jniftiimage.h niftilib/nifti1_io.h niftilib/nifti1.h niftilib/znzlib.h
+SOURCES += jniftiimage.cpp niftilib/nifti1_io.c niftilib/znzlib.c
+
 
 INCLUDEPATH += utils
 DEPENDPATH += utils

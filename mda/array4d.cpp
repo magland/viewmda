@@ -232,7 +232,7 @@ void Array4D::read(QString mda_fname,int storage_order,bool read_mask) {
 	#endif
 	Mda M;
 	printf(".");
-	M.read(mda_fname.toAscii().data());
+	M.read(mda_fname.toLatin1().data());
 	printf(".");
 	allocate(M.size(0),M.size(1),M.size(2),M.size(3),storage_order);
 	printf(".");
@@ -262,7 +262,7 @@ void Array4D::write(QString mda_fname) const {
 	for (int x=0; x<width(); x++) {
 		M(x,y,z,t)=this->value(x,y,z,t);
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 void Array4D::writeInt16(QString mda_fname) const {
 	#ifdef WIN32
@@ -276,7 +276,7 @@ void Array4D::writeInt16(QString mda_fname) const {
 	for (int x=0; x<width(); x++) {
 		M(x,y,z,t)=this->value(x,y,z,t);
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 void Array4D::writeByte(QString mda_fname) const {
 	#ifdef WIN32
@@ -290,7 +290,7 @@ void Array4D::writeByte(QString mda_fname) const {
 	for (int x=0; x<width(); x++) {
 		M(x,y,z,t)=this->value(x,y,z,t);
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 
 long Array4DPrivate::get_index(int x,int y,int z,int t) {

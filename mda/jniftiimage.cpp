@@ -49,8 +49,8 @@ bool JNiftiImage::read(QString fname,bool load_data) {
 	#ifdef __WIN32__
 	fname2.replace("/","\\");
 	#endif
-	printf("Reading %s...",fname.toAscii().data());
-	d->m_image=nifti_image_read(fname2.toAscii().data(),0);
+    printf("Reading %s...",fname.toLatin1().data());
+    d->m_image=nifti_image_read(fname2.toLatin1().data(),0);
 	if (!d->m_image) {
 		printf("Error reading niftii image.\n");
 		return false;
@@ -288,7 +288,7 @@ bool JNiftiImage::write(QString nii_fname) {
 	#ifdef __WIN32__
 	prefix.replace("/","\\");
 	#endif
-	nifti_set_filenames(d->m_image,prefix.toAscii().data(),0,1);
+    nifti_set_filenames(d->m_image,prefix.toLatin1().data(),0,1);
 	QFile::remove(d->m_image->fname);
 	nifti_set_iname_offset(d->m_image);
 	nifti_image_write(d->m_image);
@@ -524,7 +524,7 @@ void JNiftiImage::writeMda(QString mda_fname) const {
 	#ifdef WIN32
 	fname.replace("/","\\");
 	#endif
-	FILE *outf=fopen(fname.toAscii().data(),"wb");
+    FILE *outf=fopen(fname.toLatin1().data(),"wb");
 	if (!outf) return;
 	qint32 mda_data_type=0;
 	qint32 num_bytes=0;

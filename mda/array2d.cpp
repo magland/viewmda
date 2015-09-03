@@ -123,7 +123,7 @@ void Array2D::read(QString mda_fname) {
 	mda_fname.replace("/","\\");
 	#endif
 	Mda M;
-	M.read(mda_fname.toAscii().data());
+	M.read(mda_fname.toLatin1().data());
 	allocate(M.size(0),M.size(1));
 	for (int y=0; y<height(); y++)
 	for (int x=0; x<width(); x++) {
@@ -135,7 +135,7 @@ void Array2D::readSlice(QString mda_fname,int slice_number) {
 	mda_fname.replace("/","\\");
 	#endif
 	Mda M;
-	M.readSlices(mda_fname.toAscii().data(),slice_number,slice_number);
+	M.readSlices(mda_fname.toLatin1().data(),slice_number,slice_number);
 	allocate(M.size(0),M.size(1));
 	for (int y=0; y<height(); y++)
 	for (int x=0; x<width(); x++) {
@@ -152,7 +152,7 @@ void Array2D::write(QString mda_fname) const {
 	for (int x=0; x<width(); x++) {
 		M(x,y)=this->value(x,y);
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 void write_mda(const QString &fname2,const QList<float> &data) {
 	QString fname=fname2;
@@ -164,7 +164,7 @@ void write_mda(const QString &fname2,const QList<float> &data) {
 	for (int x=0; x<data.count(); x++) {
 		M(x)=data[x];
 	}
-	M.write(fname.toAscii().data());
+	M.write(fname.toLatin1().data());
 }
 void read_mda(const QString &fname2,QList<float> &data) {
 	QString fname=fname2;
@@ -173,7 +173,7 @@ void read_mda(const QString &fname2,QList<float> &data) {
 	fname.replace("/","\\");
 	#endif
 	Mda M;
-	M.read(fname.toAscii().data());
+	M.read(fname.toLatin1().data());
 	for (int x=0; x<M.size(0); x++) {
 		data << M(x).re();
 	}
