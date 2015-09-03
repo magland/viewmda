@@ -3,6 +3,7 @@
 TEMPLATE =	app
 
 QT += core gui widgets
+QT -= opengl
 
 OBJECTS_DIR = ./build
 MOC_DIR = ./build
@@ -50,6 +51,6 @@ FORMS += brightnesstool.ui
 HEADERS += polygonslices.h
 SOURCES += polygonslices.cpp
 
-LIBS += -L. -lfftw3
+LIBS += -lfftw3
 HEADERS +=  fftw_library.h fftw3.h
 SOURCES += fftw_library.cpp
