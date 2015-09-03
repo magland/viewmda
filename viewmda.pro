@@ -2,6 +2,8 @@
 
 TEMPLATE =	app
 
+QT += core gui
+
 OBJECTS_DIR = ./build
 MOC_DIR = ./build
 DESTDIR = ./
@@ -14,17 +16,18 @@ FORMS +=
 
 DEFINES += VIEWMDA
 
-# COMMON CODE ###################
-COMMONCODE += mda utils
-message($$(DEVCOMMON))
-include($$(DEVCOMMON)/devcommon.pri)
 #mda
+INCLUDEPATH += mda
+DEPENDPATH += mda
+VPATH += mda
 HEADERS += mda.h array2d.h array3d.h array4d.h
 SOURCES += mda.cpp array2d.cpp array3d.cpp array4d.cpp 
 HEADERS += jniftiimage2.h
 SOURCES += jniftiimage2.cpp
-include($$(DEVCOMMON)/mda/jniftiimage.pri)
-#utils
+
+INCLUDEPATH += utils
+DEPENDPATH += utils
+VPATH += utils
 HEADERS += affinetransformation.h jmatrix.h textfile.h qwait.h
 SOURCES += affinetransformation.cpp jmatrix.cpp textfile.cpp qwait.cpp
 ###################################
