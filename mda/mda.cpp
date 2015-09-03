@@ -385,7 +385,7 @@ bool Mda::read(const QString &filename) {
 	fname.replace("/","\\");
 	#endif
 	clear();
-	FILE *inf=fopen(fname.toAscii().data(),"rb");
+	FILE *inf=fopen(fname.toLatin1().data(),"rb");
 	if (!inf) return false;
 	qint32 hold_num_dims;
 	qint32 hold_dims[MAX_MDA_DIMS];
@@ -467,7 +467,7 @@ bool Mda::readSize(const QString &filename,Mda &ret) {
 	#ifdef WIN32
 	fname.replace("/","\\");
 	#endif
-	FILE *inf=fopen(fname.toAscii().data(),"rb");
+	FILE *inf=fopen(fname.toLatin1().data(),"rb");
 	if (!inf) return false;
 	qint32 hold_num_dims;
 	qint32 hold_dims[MAX_MDA_DIMS];
@@ -507,7 +507,7 @@ bool Mda::readSlices(const QString &filename,long minslice,long maxslice) {
 	if (maxslice<minslice) return false;
 	if (minslice<0) return false;
 	clear();
-	FILE *inf=fopen(fname.toAscii().data(),"rb");
+	FILE *inf=fopen(fname.toLatin1().data(),"rb");
 	if (!inf) return false;
 	qint32 hold_num_dims;
 	qint32 hold_dims[MAX_MDA_DIMS];
@@ -618,7 +618,7 @@ bool Mda::write(const QString &filename) const {
 	#ifdef WIN32
 	fname.replace("/","\\");
 	#endif
-	FILE *outf=fopen(fname.toAscii().data(),"wb");
+	FILE *outf=fopen(fname.toLatin1().data(),"wb");
 	if (!outf) return false;
 	if (m_data_type!=MDA_TYPE_COMPLEX) {
 		qint32 data_type=m_data_type;

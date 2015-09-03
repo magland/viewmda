@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'brightnesstool.ui'
 **
-** Created: Fri Aug 30 10:18:42 2013
-**      by: Qt User Interface Compiler version 4.8.1
+** Created by: Qt User Interface Compiler version 5.5.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,14 +10,14 @@
 #define UI_BRIGHTNESSTOOL_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QScrollBar>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QScrollBar>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -34,7 +33,7 @@ public:
     void setupUi(QWidget *BrightnessTool)
     {
         if (BrightnessTool->objectName().isEmpty())
-            BrightnessTool->setObjectName(QString::fromUtf8("BrightnessTool"));
+            BrightnessTool->setObjectName(QStringLiteral("BrightnessTool"));
         BrightnessTool->resize(184, 80);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -43,10 +42,10 @@ public:
         BrightnessTool->setSizePolicy(sizePolicy);
         vboxLayout = new QVBoxLayout(BrightnessTool);
         vboxLayout->setSpacing(2);
-        vboxLayout->setObjectName(QString::fromUtf8("vboxLayout"));
+        vboxLayout->setObjectName(QStringLiteral("vboxLayout"));
         vboxLayout->setContentsMargins(0, 0, 0, 0);
         minimum = new QScrollBar(BrightnessTool);
-        minimum->setObjectName(QString::fromUtf8("minimum"));
+        minimum->setObjectName(QStringLiteral("minimum"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(1);
         sizePolicy1.setVerticalStretch(0);
@@ -57,13 +56,13 @@ public:
         vboxLayout->addWidget(minimum);
 
         min_label = new QLabel(BrightnessTool);
-        min_label->setObjectName(QString::fromUtf8("min_label"));
+        min_label->setObjectName(QStringLiteral("min_label"));
         min_label->setAlignment(Qt::AlignCenter);
 
         vboxLayout->addWidget(min_label);
 
         maximum = new QScrollBar(BrightnessTool);
-        maximum->setObjectName(QString::fromUtf8("maximum"));
+        maximum->setObjectName(QStringLiteral("maximum"));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
@@ -74,7 +73,7 @@ public:
         vboxLayout->addWidget(maximum);
 
         max_label = new QLabel(BrightnessTool);
-        max_label->setObjectName(QString::fromUtf8("max_label"));
+        max_label->setObjectName(QStringLiteral("max_label"));
         max_label->setAlignment(Qt::AlignCenter);
 
         vboxLayout->addWidget(max_label);
@@ -87,9 +86,9 @@ public:
 
     void retranslateUi(QWidget *BrightnessTool)
     {
-        BrightnessTool->setWindowTitle(QApplication::translate("BrightnessTool", "Brightness", 0, QApplication::UnicodeUTF8));
-        min_label->setText(QApplication::translate("BrightnessTool", "Minimum", 0, QApplication::UnicodeUTF8));
-        max_label->setText(QApplication::translate("BrightnessTool", "Maximum", 0, QApplication::UnicodeUTF8));
+        BrightnessTool->setWindowTitle(QApplication::translate("BrightnessTool", "Brightness", 0));
+        min_label->setText(QApplication::translate("BrightnessTool", "Minimum", 0));
+        max_label->setText(QApplication::translate("BrightnessTool", "Maximum", 0));
     } // retranslateUi
 
 };

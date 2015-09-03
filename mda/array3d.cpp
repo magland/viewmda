@@ -273,7 +273,7 @@ void Array3D::read(QString mda_fname,int storage_order) {
 	#endif
 	Mda M;
 	printf(".");
-	M.read(mda_fname.toAscii().data());
+	M.read(mda_fname.toLatin1().data());
 	printf(".");
 	allocate(M.size(0),M.size(1),M.size(2),storage_order);
 	printf(".");
@@ -290,7 +290,7 @@ void Array3D::readSlices(QString mda_fname,int minslice,int maxslice,int storage
 	#endif
 	Mda M;
 	printf(".");
-	M.readSlices(mda_fname.toAscii().data(),minslice,maxslice);
+	M.readSlices(mda_fname.toLatin1().data(),minslice,maxslice);
 	printf(".");
 	allocate(M.size(0),M.size(1),M.size(2),storage_order);
 	printf(".");
@@ -313,7 +313,7 @@ void Array3D::write(QString mda_fname) const {
 	for (int x=0; x<width(); x++) {
 		M(x,y,z)=this->value(x,y,z);
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 void Array3D::writeInt16(QString mda_fname) const {
 	#ifdef WIN32
@@ -326,7 +326,7 @@ void Array3D::writeInt16(QString mda_fname) const {
 	for (int x=0; x<width(); x++) {
 		M(x,y,z)=this->value(x,y,z);
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 void Array3D::writeUint16(QString mda_fname) const {
 	#ifdef WIN32
@@ -341,7 +341,7 @@ void Array3D::writeUint16(QString mda_fname) const {
 		if (val<0) val=0;
 		M(x,y,z)=val;
 	}
-	M.write(mda_fname.toAscii().data());
+	M.write(mda_fname.toLatin1().data());
 }
 
 long Array3DPrivate::get_index(int x,int y,int z) {

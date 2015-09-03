@@ -169,7 +169,7 @@ bool JNiftiImage2::read(QString nii_fname,bool load_data) {
 	}
 	
 	
-	nifti_image *img=nifti_image_read(nii_fname.toAscii().data(),load_data);
+	nifti_image *img=nifti_image_read(nii_fname.toLatin1().data(),load_data);
 	if (!img) return false;
 	
 	d->m_header_parameters["ndim"]=img->ndim;
@@ -417,7 +417,7 @@ bool JNiftiImage2::write(QString nii_fname) {
 	#ifdef __WIN32__
 	prefix.replace("/","\\");
 	#endif
-  	nifti_set_filenames(img,prefix.toAscii().data(),0,1);
+  	nifti_set_filenames(img,prefix.toLatin1().data(),0,1);
   	nifti_set_iname_offset(img);
 	nifti_image_write(img);
 	nifti_image_unload(img);
